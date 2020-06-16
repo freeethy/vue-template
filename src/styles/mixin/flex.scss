@@ -1,0 +1,36 @@
+@function pick($v, $map) {
+  @each $key, $value in $map {
+    @if ($key == $v) {
+      @return $value;
+    }
+  }
+}
+
+/*
+* 使用方式：
+* flex() //默认纵向，主轴、交叉轴居中
+* flex($d: row, $m: sa, $c: fs) //则表示横向，主轴'space-around'，交叉轴'flex-start'
+* flex($m: sa, $c: fs) //!!!scss支持具名参数，也就是可以忽略参数位置！！此时表示纵向，主轴'space-around'，交叉轴'flex-start'
+*/
+@mixin flex($d: column, $m: c, $c: c) {
+  $justify: (
+    "sa": space-around,
+    "sb": space-between,
+    "se": space-evenly,
+    "c": center,
+    "fs": flex-start,
+    "fe": flex-end
+  );
+  $align: (
+    "b": baseline,
+    "s": stretch,
+    "c": center,
+    "fs": flex-start,
+    "fe": flex-end
+  );
+
+  display: flex;
+  flex-direction: $d;
+  justify-content: pick($m, $justify);
+  align-items: pick($c, $align);
+}

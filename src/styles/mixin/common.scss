@@ -1,0 +1,23 @@
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+@mixin lineHeight1($h) {
+  line-height: $h;
+  height: $h;
+}
+
+@mixin ellipsis($w) {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: $w;
+}
+
+@mixin clickable() {
+  cursor: pointer;
+  user-select: none;
+}

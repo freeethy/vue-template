@@ -1,0 +1,98 @@
+@import "~element-ui/packages/theme-chalk/src/index";
+
+// 日历组件样式覆盖
+// 展开部分样式
+.el-date-picker {
+  background: #fff;
+  box-shadow: 0 4px 15px 0 rgba(163, 191, 157, 0.5);
+  border-radius: 20px;
+  .el-date-table th {
+    color: #d9dcde;
+    border-bottom: none;
+  }
+  .el-month-table td .cell {
+    width: 64px;
+    height: 26px;
+    line-height: 26px;
+  }
+  .el-month-table td div {
+    height: 40px;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .el-date-picker__header--bordered + .el-picker-panel__content {
+    margin-bottom: 0;
+  }
+  .el-month-table td.current:not(.disabled) .cell {
+    background-color: #abc270;
+    color: #fff;
+  }
+}
+// focus部分样式
+.el-date-editor {
+  .el-input__icon {
+    color: #abc270;
+  }
+}
+
+// 输入框-搜索覆盖
+.input-search {
+  input {
+    border-radius: 20px;
+  }
+}
+
+/* 遮罩 */
+.v-modal {
+  opacity: 0.7 !important;
+  background: #e6e8e3 !important;
+}
+
+// popconfirm
+.el-popconfirm__main {
+  margin: 1em 0;
+}
+// tooltip提示框
+// popper-class="common-tooltip"
+.el-tooltip__popper.common-tooltip {
+  color: #ff7876 !important;
+  background: #fff1f1 !important;
+  border: 1px solid #ff7876 !important;
+  .popper__arrow {
+    border-top-color: #ff7876 !important;
+    &::after {
+      border-top-color: #fff1f1 !important;
+    }
+  }
+}
+
+// message提示
+.el-message {
+  justify-content: center;
+  &__icon {
+    margin-right: 8px !important;
+    &:before {
+      display: inline-block;
+      content: "" !important;
+      width: 20px;
+      height: 20px;
+      background-size: contain;
+      vertical-align: middle;
+    }
+  }
+  .el-icon-success {
+    &:before {
+      background-image: url("../assets/imgs/success.png");
+    }
+  }
+  .el-icon-error {
+    &:before {
+      background-image: url("../assets/imgs/error.png");
+    }
+  }
+  .el-icon-warning {
+    &:before {
+      background-image: url("../assets/imgs/warning.png");
+    }
+  }
+}

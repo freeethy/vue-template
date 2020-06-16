@@ -1,0 +1,9 @@
+// px单位转成vw单位
+@function px2vw($value) {
+  @return $value * $vwUnit;
+}
+
+// px单位转成vh单位
+@function px2vh($value) {
+  @return $value * $vhUnit;
+}

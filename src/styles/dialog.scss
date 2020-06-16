@@ -1,0 +1,36 @@
+@include b(dialog) {
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 8px 16px 0 rgba(140, 166, 99, 0.32);
+
+  @include e(header) {
+    padding: 17px px2vw(40);
+    border-radius: 20px 20px 0 0;
+    background-image: linear-gradient(to right, #abc270, #c1db7f);
+  }
+
+  @include e(headerbtn) {
+    top: auto;
+    right: px2vw(38);
+
+    .el-dialog__close {
+      color: $--color-white;
+      vertical-align: middle;
+    }
+  }
+
+  @include e(title) {
+    line-height: 1;
+    font-size: 16px;
+    color: $--color-white;
+  }
+
+  @include e(body) {
+    padding: px2vw(30) px2vw(40);
+  }
+
+  @include e(footer) {
+    padding: px2vw(40) px2vw(40);
+    box-shadow:0px 0px 16px 0px rgba(171,201,214,0.15);
+  }
+}
