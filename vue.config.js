@@ -39,8 +39,7 @@ module.exports = {
       warnings: false,
       errors: false
     },
-    // 如果需要mock在proxy前，则用before
-    // 如果需要mock在proxy后，则用after
+    // 如果需要mock在proxy前，用before
     before: require("./mock/mock-server.js")
   },
   publicPath: process.env.PUBLIC_PATH,

@@ -4,6 +4,29 @@ import layout from "../views/layout";
 Vue.use(VueRouter);
 const routes = [
   {
+    path: "/home/",
+    name: "首页",
+    show: true,
+    icon: "menuEvent",
+    component: layout,
+    meta: {
+      moduleCode: "board"
+    },
+    children: [
+      {
+        path: "index/",
+        name: "视图",
+        defaultPath: "index/",
+        show: true,
+        icon: "menuEventFunction",
+        meta: {
+          code: "board"
+        },
+        component: () => import(/* webpackChunkName: "home"" */ "../views/Home")
+      }
+    ]
+  },
+  {
     path: "/example",
     name: "example",
     component: () => import("../views/example.vue")
@@ -31,7 +54,7 @@ export function getRouters({ moduleCodes }) {
   // 处理菜单权限路由
   // moduleCodes所有的权限的code
   let menusBtn = moduleCodes || [];
-  let noAuth = true;
+  // let noAuth = true;
   routes.forEach(item => {
     if (
       !menusBtn.some(el => {
@@ -42,7 +65,7 @@ export function getRouters({ moduleCodes }) {
     }
     // 判断子权限
     if (item.show) {
-      noAuth = false;
+      // noAuth = false;
       item.children.forEach(subItem => {
         if (
           subItem.meta &&
@@ -84,12 +107,12 @@ export function getRouters({ moduleCodes }) {
       });
     }
   });
-  if (noAuth) {
-    let index = routes.findIndex(it => {
-      return it.name == "noAuth";
-    });
-    routes[index].show = true;
-  }
+  // if (noAuth) {
+  //   let index = routes.findIndex(it => {
+  //     return it.name == "noAuth";
+  //   });
+  //   routes[index].show = true;
+  // }
   // 用户直接输入域名默认跳转页面
   for (let routerItem of routes) {
     if (routerItem.show) {

@@ -7,8 +7,6 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "build:sit1": "vue-cli-service build --mode sit1",
-    "build:sit2": "vue-cli-service build --mode sit2",
-    "build:sit3": "vue-cli-service build --mode sit3",
     "build:pro": "vue-cli-service build --mode production",
     "build:pro:report": "vue-cli-service build --mode production --report"
   },
