@@ -141,6 +141,7 @@
 </template>
 
 <script>
+import MayWaterMark from "may-watermark";
 export default {
   data() {
     return {
@@ -283,6 +284,11 @@ export default {
       }
       return isJPG && isLt2M;
     }
+  },
+  created() {
+    MayWaterMark.init({
+      name: "测试水印 may-watermark"
+    });
   }
 };
 </script>

@@ -35,14 +35,11 @@
         @openDetailProject="handleGetDetail"
       />
     </div>
-    <!-- 项目详情组件 -->
-    <projectDetail :isShowDetailProject="isShowDetailProject" :id="id" />
   </div>
 </template>
 
 <script type="text/javascript">
 import calenderItem from "./calenderItem.vue";
-import projectDetail from "../others/projectDetail.vue";
 
 export default {
   name: "calender",
@@ -201,8 +198,7 @@ export default {
     }
   },
   components: {
-    calenderItem,
-    projectDetail
+    calenderItem
   }
 };
 </script>

@@ -42,6 +42,7 @@
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
     "lint-staged": "^10.2.6",
+    "may-watermark": "^1.0.0",
     "mockjs": "^1.1.0",
     "prettier": "^1.19.1",
     "sass": "^1.26.7",
